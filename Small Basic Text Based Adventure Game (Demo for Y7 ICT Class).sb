@@ -1,0 +1,57 @@
+TextWindow.ForegroundColor = "Black"
+TextWindow.BackgroundColor = "Blue"
+TextWindow.WriteLine("What is your name? In advance, the best of luck to your brave soul on this valiant quest.")
+TextWindow.WriteLine("")
+player = TextWindow.Read()
+TextWindow.WriteLine("")
+TextWindow.WriteLine("Are you a Sir, or Madam?")
+title = TextWindow.Read()
+TextWindow.WriteLine("")
+TextWindow.WriteLine("Good day, " + player + "... welcome to 'The Game of " + player + "'s Judgement Day'!")
+Program.Delay(5)
+TextWindow.WriteLine("Do you think you have what it takes?")
+TextWindow.Read()
+TextWindow.WriteLine("Hmmmmmmm")
+i = 1
+repeat:
+	Program.Delay(0.2)
+	TextWindow.Write(".")
+	i = i + 1
+	If (i < 6) Then
+		Goto repeat
+	EndIf
+TextWindow.WriteLine("Well you're not wrong " + title + ", but... you're not quite right either. Let me explain...")
+TextWindow.WriteLine("Choose a response (type in the response number you choose):")
+TextWindow.WriteLine("1) Okay, sure, I'm curious")
+TextWindow.WriteLine("2) Can we just cut the rubbish and skip to the good bit man?")
+TextWindow.WriteLine("1) *falls asleep*)")
+ans1 = TextWindow.ReadNumber()
+If (ans1 = "1") Then
+	Program.Delay(0.5)
+	TextWindow.WriteLine("It all started...")
+	Program.Delay(0.3)
+	TextWindow.Write(" in the beginning...")
+	
+ElseIf (ans1 = "2") Then
+	Program.Delay(0.5)
+	TextWindow.WriteLine("W-whaa?? ")
+	Program.Delay(0.3)
+	TextWindow.Write(".")
+	Program.Delay(0.1)
+	TextWindow.Write(".")
+	Program.Delay(0.1)
+	TextWindow.Write(". ")
+	Program.Delay(0.5)
+	TextWindow.Write("Do you know who I am?")
+	TextWindow.Read()
+	TextWindow.WriteLine("No, I'm the one and only Ronnie Pickering!! And I'm here to help you, so cut the sass please...")
+	
+ElseIf (ans1 = "3") Then
+	Program.Delay(0.5)
+	TextWindow.WriteLine("*slaps you across the face*")
+	Program.Delay(0.3)
+	TextWindow.Write("Wake up " + title + "; this isn't a game!")
+	Program.Delay(0.5)
+	TextWindow.WriteLine("...Well, heh...")
+	
+EndIf

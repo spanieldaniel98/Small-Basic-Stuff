@@ -1,0 +1,74 @@
+TextWindow.WriteLine("This software was brought to you by Spaniel Enterprises! (2016 ©)")
+nline()
+TextWindow.WriteLine("Welcome to the Celsius => Fahrenheit and vice to versa temperature converter!")
+
+begin:
+nline()
+math()
+choice()
+Goto begin
+
+
+Sub nline
+	TextWindow.WriteLine("")
+EndSub
+
+
+Sub math
+              TextWindow.WriteLine("Would you like to input a Celsius value or a Fahrenheit value to convert?")
+		mathtime:
+		nline()
+		type = TextWindow.Read()
+		
+			If (type = "Celsius" Or type = "celsius" Or type = "C" Or type = "c" Or type = "Cels" Or type = "cels") Then
+				nline()
+				TextWindow.WriteLine("Enter a temperature value in degrees Celsius to convert:")
+				nline()
+				cels = TextWindow.ReadNumber()
+				fahr = cels * 1.8 + 32
+				nline()
+				TextWindow.WriteLine(cels + " degrees Celsius is equal to " + fahr + " degrees Fahrenheit.")
+				
+			ElseIf (type = "Fahrenheit" Or type = "fahrenheit" Or type = "F" Or type = "f" Or type = "Fahr" Or type = "fahr") Then
+				nline()
+				TextWindow.WriteLine("Enter a temperature value in degrees Fahrenheit to convert:")
+				nline()
+				fahr = TextWindow.ReadNumber()
+				cels = 5 * fahr / 9 + 32
+				nline()
+				TextWindow.WriteLine(fahr + " degrees Fahrenheit is equal to " + cels + " degrees Celsius.")
+				
+			Else
+				TextWindow.WriteLine("Sorry, I didn't get that... do you speak English? Try again good Sir/Madam:")
+				Goto mathtime
+				
+		EndIf
+		
+	EndSub
+
+
+Sub choice
+	nline()
+	TextWindow.WriteLine("Would you like to run the converter again to convert another value? Yes or no?")
+	
+	choosin:
+	
+	nline()
+	answ = TextWindow.Read()
+	nline()
+	
+		If (answ = "Yes" Or answ = "yes" Or answ = "Y" Or answ = "y" Or answ = "Yeah" Or answ = "yeah" Or answ = "Yep" Or answ = "yep") Then
+			TextWindow.WriteLine("Alrighty then, off we goooooo!!")
+			
+		ElseIf (answ = "No" Or answ = "no" Or answ = "N" Or answ = "n" Or answ = "Nope" Or answ = "nope" Or answ = "Nah" Or answ = "nah") Then
+			TextWindow.WriteLine("Awww, that's a shame; welp, have a nice day! :D")
+			Program.Delay(3000)
+			Program.End()
+			
+		Else
+			TextWindow.WriteLine("There's this language called English... you should try speaking it sometime. =P Another chance perhaps? Enter your answer again:")
+			Goto choosin
+		
+	EndIf
+
+EndSub
